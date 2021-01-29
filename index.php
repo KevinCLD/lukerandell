@@ -1,10 +1,8 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-
-
-
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
 
 
 <section data-id="about" class="fullpage-section block block--about chapter" style="z-index: 1">
@@ -21,13 +19,9 @@
 
 		<nav class="main-nav text-color--grey-dark hidden--s hidden--m underlined--white">
 			
-			<?php 
-				
-				wp_nav_menu(array(
-					'menu' => 'Nav'
-				));
-				
-			?>
+			<?php
+        wp_nav_menu(array('menu' => 'Nav'));
+?>
 
 		</nav>
 
@@ -45,13 +39,15 @@
 			
 
 				
-				<?php if (get_field('about_title')) : ?>
+				<?php if (get_field('about_title')): ?>
 				<p class="proxima-nova-bold"><?php the_field('about_title'); ?></strong></p>
-				<?php endif; ?>
+				<?php
+        endif; ?>
 				
-				<?php if (get_field('about_content')) : ?>
+				<?php if (get_field('about_content')): ?>
 				<p><?php the_field('about_content'); ?></p>
-				<?php endif; ?>
+				<?php
+        endif; ?>
 				
 			</div>
 			<div class="column--s-12">
@@ -66,9 +62,10 @@
 				
 				<div class="column--s-12 padding--s-1 padding--m-2">
 
-				<?php if (get_field('about_content_second')) : ?>
+				<?php if (get_field('about_content_second')): ?>
 				<p><?php the_field('about_content_second'); ?></p>
-				<?php endif; ?>
+				<?php
+        endif; ?>
 					</div>
 		</div>
 	</div>										
@@ -86,21 +83,24 @@
 						
 						
 						<?php
-
-// check if the repeater field has rows of data
-if( have_rows('testimonials') ): $i = 0;
-
- 	// loop through the rows of data
-    while ( have_rows('testimonials') ) : the_row(); ?>
+        // check if the repeater field has rows of data
+        if (have_rows('testimonials')):
+            $i = 0;
+            // loop through the rows of data
+            while (have_rows('testimonials')):
+                the_row(); ?>
     
-    				<?php if (get_sub_field('name')) : ?>
+    				<?php if (get_sub_field('name')): ?>
 						<li class="project-nav"><a href="#testimonial<?php echo $i; ?>"><?php the_sub_field('name'); ?></a></li>
-						<?php endif; ?>
+						<?php
+                endif; ?>
 						
 						
 						
 						
-		<?php $i++; endwhile; endif; ?>				
+		<?php $i++;
+            endwhile;
+        endif; ?>				
 							</ul>
 				</nav>
 							</div>
@@ -108,13 +108,9 @@ if( have_rows('testimonials') ): $i = 0;
 
 		<nav class="main-nav text-color--grey-dark hidden--s hidden--m underlined--dark-grey">
 			
-			<?php 
-				
-				wp_nav_menu(array(
-					'menu' => 'Nav'
-				));
-				
-			?>
+			<?php
+        wp_nav_menu(array('menu' => 'Nav'));
+?>
 
 		</nav>
 
@@ -125,16 +121,16 @@ if( have_rows('testimonials') ): $i = 0;
 			<ul>
 				
 				<?php
-
-// check if the repeater field has rows of data
-if( have_rows('testimonials') ): $i = 0;
-
- 	// loop through the rows of data
-    while ( have_rows('testimonials') ) : the_row(); ?>
+        // check if the repeater field has rows of data
+        if (have_rows('testimonials')):
+            $i = 0;
+            // loop through the rows of data
+            while (have_rows('testimonials')):
+                the_row(); ?>
 
     
 
-			<li data-id="testimonial<?= $i; ?>">
+			<li data-id="testimonial<?=$i; ?>">
 				
 				<div class="vertical-align--s-middle">
 					
@@ -159,7 +155,9 @@ if( have_rows('testimonials') ): $i = 0;
 				
 			</li>
 				
-			<?php $i++; endwhile; endif; ?>
+			<?php $i++;
+            endwhile;
+        endif; ?>
 
 			</ul>
 				
@@ -182,15 +180,16 @@ if( have_rows('testimonials') ): $i = 0;
 					<ul class="project-nav text-red">
 						
 	<?php
-
-// check if the repeater field has rows of data
-if( have_rows('services') ): $i = 0;
-
- 	// loop through the rows of data
-    while ( have_rows('services') ) : the_row(); ?>
+        // check if the repeater field has rows of data
+        if (have_rows('services')):
+            $i = 0;
+            // loop through the rows of data
+            while (have_rows('services')):
+                the_row(); ?>
     
-    					<?php if (get_sub_field('service')) : ?>
-						<li class="project-nav"><a href="#service<?php echo $i; ?>"><?php the_sub_field('service'); ?></a></li>								<?php endif; ?>
+    					<?php if (get_sub_field('service')): ?>
+						<li class="project-nav"><a href="#service<?php echo $i; ?>"><?php the_sub_field('service'); ?></a></li>								<?php
+                endif; ?>
 						
 						
 						
@@ -199,7 +198,9 @@ if( have_rows('services') ): $i = 0;
 						
 					
 						
-		<?php $i++; endwhile; endif; ?>
+		<?php $i++;
+            endwhile;
+        endif; ?>
 					</ul>
 			</nav>
 			</div>
@@ -209,13 +210,9 @@ if( have_rows('services') ): $i = 0;
 
 		<nav class="main-nav text-color--red hidden--s hidden--m underlined--white">
 			
-			<?php 
-				
-				wp_nav_menu(array(
-					'menu' => 'Nav'
-				));
-				
-			?>
+			<?php
+        wp_nav_menu(array('menu' => 'Nav'));
+?>
 			
 		</nav>
 
@@ -237,33 +234,38 @@ if( have_rows('services') ): $i = 0;
 																				
 						
 <?php
-
-// check if the repeater field has rows of data
-if( have_rows('services') ): $i = 0;
-
- 	// loop through the rows of data
-    while ( have_rows('services') ) : the_row(); ?>
+        // check if the repeater field has rows of data
+        if (have_rows('services')):
+            $i = 0;
+            // loop through the rows of data
+            while (have_rows('services')):
+                the_row(); ?>
 
 							<div class="project" data-id="service<?php echo $i; ?>">
 								
-								<?php if (get_sub_field('service')) : ?>
+								<?php if (get_sub_field('service')): ?>
 								<p class="proxima-nova-bold " style="color: black; display: none"><?php the_sub_field('service'); ?></p>
-								<?php endif; ?>
+								<?php
+                endif; ?>
 								
-								<?php if (get_sub_field('service_content')) : ?>
+								<?php if (get_sub_field('service_content')): ?>
 								<?php the_sub_field('service_content'); ?>
-								<?php endif; ?>
+								<?php
+                endif; ?>
 								
 								
-								<?php if (get_sub_field('book_now_link')) : ?>
+								<?php if (get_sub_field('book_now_link')): ?>
 									<a class="js-toggle-popup button" href="#bookPopup"><?php the_sub_field('book_now_link'); ?></a>
 									
 								
-								<?php endif; ?>
+								<?php
+                endif; ?>
 								
 							</div>
 							
-							<?php $i++; endwhile; endif; ?> 
+							<?php $i++;
+            endwhile;
+        endif; ?> 
 							
 								
 						
@@ -290,15 +292,16 @@ if( have_rows('services') ): $i = 0;
 						
 						
 						<?php
-
-// check if the repeater field has rows of data
-if( have_rows('nut') ): $i = 0;
-
- 	// loop through the rows of data
-    while ( have_rows('nut') ) : the_row(); ?>
+        // check if the repeater field has rows of data
+        if (have_rows('nut')):
+            $i = 0;
+            // loop through the rows of data
+            while (have_rows('nut')):
+                the_row(); ?>
     
-    					<?php if (get_sub_field('nuttitle')) : ?>
-						<li class="project-nav"><a href="#nutrition<?php echo $i; ?>"><?php the_sub_field('nuttitle'); ?></a></li>								<?php endif; ?>
+    					<?php if (get_sub_field('nuttitle')): ?>
+						<li class="project-nav"><a href="#nutrition<?php echo $i; ?>"><?php the_sub_field('nuttitle'); ?></a></li>								<?php
+                endif; ?>
 						
 						
 						
@@ -307,7 +310,9 @@ if( have_rows('nut') ): $i = 0;
 						
 					
 						
-		<?php $i++; endwhile; endif; ?>
+		<?php $i++;
+            endwhile;
+        endif; ?>
 					</ul>
 				</nav>
 			
@@ -318,13 +323,9 @@ if( have_rows('nut') ): $i = 0;
 
 		<nav class="main-nav text-color--grey-dark hidden--s hidden--m underlined--white">
 			
-			<?php 
-				
-				wp_nav_menu(array(
-					'menu' => 'Nav'
-				));
-				
-			?>
+			<?php
+        wp_nav_menu(array('menu' => 'Nav'));
+?>
 			
 		</nav>
 
@@ -341,47 +342,51 @@ if( have_rows('nut') ): $i = 0;
 
 				
 				<?php
-
-				// check if the repeater field has rows of data
-				if( have_rows('nut') ): $i = 0;
-
-					// loop through the rows of data
-					while ( have_rows('nut') ) : the_row(); ?>
+        // check if the repeater field has rows of data
+        if (have_rows('nut')):
+            $i = 0;
+            // loop through the rows of data
+            while (have_rows('nut')):
+                the_row(); ?>
 
 						<div class="project" data-id="nutrition<?php echo $i; ?>">
 							
-							<?php if (get_sub_field('nuttitle')) : ?>
+							<?php if (get_sub_field('nuttitle')): ?>
 							<p class="proxima-nova-bold " style="text-transform: uppercase; color: black; display: none"><?php the_sub_field('nuttitle'); ?></h5>
-							<?php endif; ?>
+							<?php
+                endif; ?>
 							
-							<?php if (get_sub_field('nutinfo')) : ?>
+							<?php if (get_sub_field('nutinfo')): ?>
 							<?php the_sub_field('nutinfo'); ?>
-							<?php endif; ?>
+							<?php
+                endif; ?>
 							
-							<?php if (get_sub_field('download_text')) : ?>
+							<?php if (get_sub_field('download_text')): ?>
 								<a class="js-toggle-popup button" href="#downloadPopup"><?php the_sub_field('download_text'); ?></a>
 								
 							
-							<?php endif; ?>
+							<?php
+                endif; ?>
 						
 						</div>
 							
-				<?php $i++; endwhile; endif; ?> 
+				<?php $i++;
+            endwhile;
+        endif; ?> 
 				
 				
 				
 				
 				
 				<?php
-
-				// check if the repeater field has rows of data
-				if( have_rows('logos') ): ?>
+        // check if the repeater field has rows of data
+        if (have_rows('logos')): ?>
 				
 				<ul class="logos-list">
 
 					<?php // loop through the rows of data
-						
-					while ( have_rows('logos') ) : the_row(); ?>
+            while (have_rows('logos')):
+                the_row(); ?>
 
 						<li>
 						
@@ -393,11 +398,13 @@ if( have_rows('nut') ): $i = 0;
 							
 						</li>
 							
-				<?php endwhile; ?>
+				<?php
+            endwhile; ?>
 				
 				</ul>
 				
-				<?php endif; ?> 			
+				<?php
+        endif; ?> 			
 							
 							
 		</div>
@@ -413,6 +420,8 @@ if( have_rows('nut') ): $i = 0;
 
 <div id="mobileTestimVid"></div>
 
-<?php endwhile; endif; ?>	
+<?php
+    endwhile;
+endif; ?>	
 
 <?php get_footer(); ?>

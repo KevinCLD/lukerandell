@@ -1,94 +1,95 @@
 
 			
-			<div class="js-popup popup" id="downloadPopup">
-				
-				
-				<a class="js-close-popup closebtn" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cancel.svg"></a>
+		<div class="js-popup popup" id="downloadPopup">
+			
+			
+			<a class="js-close-popup closebtn" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cancel.svg"></a>
+	
+			<?php gravity_form('Download', true, true, false, '', true); ?>
+			
+			<p style="color: grey; text-align: center; font-size: 12px; margin-top: 16px; margin-bottom: 0;">Your email is safe with me, I don't spam</p>
+			
+			
+		</div>
 		
-				<?php gravity_form('Download', true, true, false, '', true);?>
-				
-				<p style="color: grey; text-align: center; font-size: 12px; margin-top: 16px; margin-bottom: 0;">Your email is safe with me, I don't spam</p>
-				
-				
-			</div>
+	
+		<div class="js-popup popup" id="bookPopup">
+			<a class="js-close-popup closebtn" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cancel.svg"></a>
+			<?php gravity_form('Book Now', true, true, false, '', true); ?>
 			
+			<p style="color: grey; text-align: center; font-size: 12px; margin-top: 16px; margin-bottom: 0;">Your email is safe with me, I don't spam</p>	
+			
+			
+		</div>
 		
-			<div class="js-popup popup" id="bookPopup">
-				<a class="js-close-popup closebtn" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cancel.svg"></a>
-				<?php gravity_form('Book Now', true, true, false, '', true);?>
-				
-				<p style="color: grey; text-align: center; font-size: 12px; margin-top: 16px; margin-bottom: 0;">Your email is safe with me, I don't spam</p>	
-				
-				
-			</div>
+		
+		<footer class="block block--footer" data-id="contact">
 			
-			
-			<footer class="block block--footer" data-id="contact">
+			<div class="block__inner" style="background-image: url(<?php echo wp_get_attachment_image_url(
+    get_field('contact_image'),
+    'full'
+); ?>)">
 				
-				<div class="block__inner" style="background-image: url(<?php echo wp_get_attachment_image_url(get_field('contact_image'), 'full'); ?>)">
+				
+				<div class="contact-details">
 					
-					
-					<div class="contact-details">
+					<h3 style="text-transform: uppercase; color: white">contact</h3>
 						
-						<h3 style="text-transform: uppercase; color: white">contact</h3>
+					<h6 style="text-transform: uppercase; color: white">email</h6>
+
+
+
+					<a class="proxima-nova-bold" href="mailto:<?php the_field(
+      'email'
+  ); ?>" style="text-transform: uppercase;"><?php the_field('email'); ?></a>
+					
+					<h6 style="text-transform: uppercase; color: white; padding-top: 20px">phone</h6>
+					
+					<a class="proxima-nova-bold" href="tel:<?php the_field(
+      'phone'
+  ); ?>" style="text-transform: uppercase;"><?php the_field('phone'); ?></a>
+					
+					<h6 style="text-transform: uppercase; color: white; padding-top: 20px">address</h6> 
+					
+					<a class="proxima-nova-bold" style="text-transform: uppercase" href="<?php the_field(
+      'address_link'
+  ); ?>" target="_blank"><?php the_field('address'); ?></a>
+						
+						<h6 style="text-transform: uppercase; color: white; padding-top: 60px">FOLLOW</h6> 
+		
 							
-						<h6 style="text-transform: uppercase; color: white">email</h6>
-
-
-
-						<a class="proxima-nova-bold" href="mailto:<?php the_field('email'); ?>" style="text-transform: uppercase;"><?php the_field('email'); ?></a>
-						
-						<h6 style="text-transform: uppercase; color: white; padding-top: 20px">phone</h6>
-						
-						<a class="proxima-nova-bold" href="tel:<?php the_field('phone'); ?>" style="text-transform: uppercase;"><?php the_field('phone'); ?></a>
-						
-						<h6 style="text-transform: uppercase; color: white; padding-top: 20px">address</h6> 
-						
-						<a class="proxima-nova-bold" style="text-transform: uppercase" href="<?php the_field('address_link'); ?>" target="_blank"><?php the_field('address'); ?></a>
+				
+				
+				<div class="socialmedia">
 							
-							<h6 style="text-transform: uppercase; color: white; padding-top: 60px">FOLLOW</h6> 
-			
-								
-					
-					
-					<div class="socialmedia">
-								
-								
-								
-								<a class="facebookicon" style="padding-right: 40px; color: #da232e" href="https://www.facebook.com/LukeRandallFitness/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/facebook-letter-logo.svg"></a>
-						
-								<a class="instagramicon" href="https://www.instagram.com/lukerandallfitness/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram.svg"></a>							
 							
+							
+							<a class="facebookicon" style="padding-right: 40px; color: #da232e" href="https://www.facebook.com/LukeRandallFitness/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/facebook-letter-logo.svg"></a>
 					
-			
-					</div>
-					
-					</div>
-					
-				
-
-					<nav class="main-nav text-color--red underlined--white hidden--s hidden--m">
+							<a class="instagramicon" href="https://www.instagram.com/lukerandallfitness/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram.svg"></a>							
 						
-						<?php 
 				
-							wp_nav_menu(array(
-								'menu' => 'Nav'
-							));
-				
-						?>
-
-						
-					</nav>
-
+		
 				</div>
 				
-			</footer> 
-	
-	
-	
+				</div>
+				
+			
 
+				<nav class="main-nav text-color--red underlined--white hidden--s hidden--m">
+					
+					<?php wp_nav_menu([
+      'menu' => 'Nav',
+  ]); ?>
+
+					
+				</nav>
+
+			</div>
+			
+	  </footer> 
 	
-      	<?php wp_footer(); ?>
+      <?php wp_footer(); ?>
 		
       <script type = "text/javascript" language = "javascript">
 
