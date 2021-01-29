@@ -5,10 +5,6 @@
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
 
-
-
-
-
 <html>
 	<head>
 		<title><?php wp_title(); ?></title>
@@ -42,6 +38,7 @@
 		<?php wp_head(); ?>
 
 	</head>
+	
 	<body class="loading">
 		
 		<aside class="sidebar-menu js-sidemenu">
@@ -52,13 +49,7 @@
 				
 			</a>
 			
-			<?php 
-							
-					wp_nav_menu(array(
-					'menu' => 'Nav'
-				));
-	
-			?>
+			<?php wp_nav_menu(array('menu' => 'Nav')); ?>
 			
 		</aside>
 		
@@ -81,30 +72,17 @@
 	
 						<nav class="main-nav text-color--red underlined--white hidden--s hidden--m">
 						
-						<?php 
-							
-								wp_nav_menu(array(
-								'menu' => 'Nav'
-							));
-				
-						?>
-
-							
-							
+						<?php wp_nav_menu(array('menu' => 'Nav')); ?>
 						
 						</nav>
 
 					<div>	
 
 						<img class="logo" src="http://lukerandallfitness.co.uk/wp-content/uploads/2021/01/LR-Logo-04-e1610465395118.png" alt="Luke Randell Fitness Logo" />
-						
-						 <!-- <h1 class="block__headtitle as-h6 proxima-nova-bold uppercase text-align--s-center text-color--white subtitled padding--horizontal--l-8 padding--vertical--l-3"><?php the_field('header_title'); ?></h1>-->
 					
 					</div>
 						
 						<div class="block__content">
-				
-							
 							
 							<a class="chevron" href="#about">
 								  
